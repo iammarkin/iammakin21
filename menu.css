@@ -1,0 +1,140 @@
+button {
+    --btn-bg: #087e8b;
+    --btn-bg-hover: color-mix(in srgb, var(--btn-bg) 75%, var(--color-secondary));
+    --btn-bg-active: color-mix(in srgb,
+            var(--btn-bg-hover) 75%,
+            var(--color-primary));
+
+    background: var(--btn-bg);
+    border: 0;
+    color: #fff;
+    padding: 0.75em 1em;
+    transition: background 0.25s ease;
+
+    &:not([disabled]):hover {
+        background: var(--btn-bg-hover);
+        cursor: pointer;
+    }
+
+    &:not([disabled]):active {
+        background: var(--btn-bg-active);
+        transform: scale(0.98);
+        transform-origin: center;
+    }
+
+    &.darken {
+        --btn-bg-hover: color-mix(in srgb, var(--btn-bg) 75%, var(--color-primary));
+    }
+
+    &[disabled] {
+        --inactive-bg: color-mix(in srgb,
+                var(--btn-bg) 15%,
+                var(--color-secondary));
+        background: var(--inactive-bg);
+        color: color-contrast(var(--inactive-bg) vs var(--color-primary),
+                var(--color-secondary) to AA);
+        cursor: not-allowed;
+    }
+}
+
+/* GLOBAL */
+:root {
+    --body-bg: #dedbd2;
+    --color-text: #000;
+    --color-link: #4a5759;
+
+    --color-primary: #4a5759;
+    --color-secondary: #dedbd2;
+    --color-accent: #087e8b;
+
+    --scrollbar-bg: #222;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) var(--scrollbar-bg);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--scrollbar-bg);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbar-bg);
+}
+
+html,
+body {
+    color: var(--color-text);
+    font-family: "Barlow", sans-serif;
+    font-size: 100%;
+    letter-spacing: 0.25px;
+    line-height: 1.75;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--body-bg);
+    background: linear-gradient(80deg,
+            var(--color-secondary) 0%,
+            var(--color-secondary) 5%,
+            var(--color-link) 5%,
+            var(--color-link) 12%,
+            var(--body-bg) 12%,
+            var(--body-bg) 13%,
+            var(--color-accent) 13%,
+            var(--color-accent) 14%,
+            var(--body-bg) 14%);
+
+    block-size: 100%;
+    display: grid;
+    min-block-size: 100vh;
+    place-items: center;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: underline 1px dashed;
+    text-underline-offset: min(5px, 1em);
+
+    &:hover {
+        color: color-mix(in srgb, var(--color-link) 90%, var(--color-secondary));
+    }
+
+    &:focus {
+        outline: 1px solid currentColor;
+        outline-offset: 3px;
+    }
+}
+
+h1,
+h2 {
+    font-family: "Hubballi", cursive;
+    line-height: 1.25;
+}
+
+section {
+    inline-size: min(750px, 50vw);
+}
+
+.not-supported {
+    background: #600;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    inset-block-end: 1rem;
+    inset-inline-start: 1rem;
+
+    @supports (background: color-mix(in srgb, #34c9eb 10%, white)) {
+        display: none;
+    }
+}

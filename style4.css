@@ -1,0 +1,200 @@
+@import url("https://static.wikia.nocookie.net/standoff-2/images/0/0b/SO2_PM.jpg/revision/latest?cb=20201124204052&path-prefix=ru");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #777;
+}
+
+figure {
+    box-shadow: 3px 3px 4px 0px #00000044;
+    border: 1px solid lightgray;
+}
+
+figcaption {
+    text-align: center;
+    padding: 0.6rem 0.2rem;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(50, 50, 50);
+    font-size: 62.5%;
+    font-family: "Lato", sans-serif;
+}
+
+.page-wrap {
+    max-width: 1200px;
+    width: 100%;
+    border: 1px solid black;
+    background: white;
+    padding: 10px;
+}
+
+article {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Comfortaa", cursive;
+}
+
+.page-main {
+    padding-bottom: 2rem;
+}
+
+.page-main h1 {
+    text-align: center;
+    font-size: 4rem;
+    padding: 2rem 0;
+}
+
+.left-side {
+    width: 60%;
+}
+
+.left-side div:only-of-type {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+
+.left-side h2 {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    font-size: 2rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.left-side div p {
+    padding: 1rem;
+}
+
+.right-side {
+    padding-left: 2rem;
+    padding-right: 1rem;
+    width: 40%;
+}
+
+footer {
+    background-color: rgb(38, 38, 38);
+    padding-bottom: 3rem;
+}
+
+footer div:only-of-type {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.8rem;
+}
+
+footer h4,
+footer h3 {
+    color: #fff;
+}
+
+footer h3 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+nav {
+    position: relative;
+    z-index: 3;
+}
+
+nav::after {
+    content: "P";
+    position: absolute;
+    top: -1rem;
+    left: 4rem;
+    font-size: 8rem;
+    color: #fff;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+nav li {
+    padding: 0.4rem 1rem;
+}
+
+nav li a {
+    color: rgb(224, 224, 224);
+}
+
+nav li a:hover {
+    opacity: 0.7;
+}
+
+footer nav:nth-of-type(1)::after {
+    content: "S";
+}
+
+footer nav:nth-of-type(2)::after {
+    content: "F";
+    left: 7rem;
+}
+
+footer nav:nth-of-type(3)::after {
+    content: "B";
+    left: 7rem;
+}
+
+/*hasta 640px de anchura se aplica esta media query*/
+@media (max-width: 640px) {
+    footer div:only-of-type {
+        flex-direction: column;
+    }
+
+    .left-side div:only-of-type {
+        flex-direction: column;
+    }
+
+    nav {
+        display: flex;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    article {
+        flex-direction: column;
+    }
+
+    .right-side {
+        width: 100%;
+    }
+
+    .left-side {
+        width: 100%;
+    }
+}

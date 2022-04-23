@@ -1,0 +1,98 @@
+.container {
+    margin: 2em auto;
+    width: 90%;
+    max-width: 1000px;
+    display: grid;
+    gap: 2em;
+    align-content: center;
+    height: 80vh;
+    grid-template-columns: repeat(8, 1fr)
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+
+.img {
+    background: url(https://i.pinimg.com/736x/92/d2/d8/92d2d850ebc88bdd9093b98a8ef45cec.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 1em;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-family: sans-serif;
+    grid-column: span 3;
+}
+
+.card>h1 {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.card>p {
+    padding-block: 1em;
+    font-size: .8rem;
+    line-height: 150%;
+}
+
+.card>a {
+    display: inline-block;
+    text-decoration: none;
+    color: purple;
+    font-size: .8rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+.img {
+    grid-column: 1 / 6;
+    grid-row: 1 / 4;
+    background-color: red;
+}
+
+
+@media (max-width: 2000px) {
+    .container {
+        align-content: space-between;
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .img {
+        aspect-ratio: 1 / 1;
+    }
+
+    .card {
+        margin-top: 2em;
+        width: 100%;
+    }
+}
+
+body {
+    background-image: url(https://i.pinimg.com/736x/02/d5/71/02d5716153bcd59cb8606f03d67c8798.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+p {
+    background-color: aquamarine;
+    font-family: 'Boogaloo', cursive;
+}
+
+h1 {
+    background-color: aquamarine;
+    font-family: 'Boogaloo', cursive;
+}
+
+h2 {
+    background-color: aquamarine;
+    font-family: 'Boogaloo', cursive;
+}
+
+h3 {
+    background-color: aquamarine;
+    font-family: 'Boogaloo', cursive;
+}
